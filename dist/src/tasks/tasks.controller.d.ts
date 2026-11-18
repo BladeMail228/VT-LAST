@@ -12,10 +12,10 @@ export declare class TasksController {
             password: string;
         } | null;
     } & {
+        id: number;
         title: string;
         description: string | null;
         completed: boolean;
-        id: number;
         userId: number | null;
     }, never, import("@prisma/client/runtime/library").DefaultArgs, import("@prisma/client").Prisma.PrismaClientOptions>;
     findAll(): import("@prisma/client").Prisma.PrismaPromise<({
@@ -26,10 +26,10 @@ export declare class TasksController {
             password: string;
         } | null;
     } & {
+        id: number;
         title: string;
         description: string | null;
         completed: boolean;
-        id: number;
         userId: number | null;
     })[]>;
     findByUser(userId: number): import("@prisma/client").Prisma.PrismaPromise<({
@@ -40,10 +40,10 @@ export declare class TasksController {
             password: string;
         } | null;
     } & {
+        id: number;
         title: string;
         description: string | null;
         completed: boolean;
-        id: number;
         userId: number | null;
     })[]>;
     findOne(id: number): Promise<{
@@ -54,24 +54,24 @@ export declare class TasksController {
             password: string;
         } | null;
     } & {
+        id: number;
         title: string;
         description: string | null;
         completed: boolean;
-        id: number;
         userId: number | null;
     }>;
     update(id: number, dto: UpdateTaskDto): import("@prisma/client").Prisma.Prisma__TaskClient<{
+        id: number;
         title: string;
         description: string | null;
         completed: boolean;
-        id: number;
         userId: number | null;
     }, never, import("@prisma/client/runtime/library").DefaultArgs, import("@prisma/client").Prisma.PrismaClientOptions>;
     remove(id: number): import("@prisma/client").Prisma.Prisma__TaskClient<{
+        id: number;
         title: string;
         description: string | null;
         completed: boolean;
-        id: number;
         userId: number | null;
     }, never, import("@prisma/client/runtime/library").DefaultArgs, import("@prisma/client").Prisma.PrismaClientOptions>;
 }

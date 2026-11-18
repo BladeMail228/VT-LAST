@@ -24,7 +24,7 @@ export class AuthService {
     const hashedPassword = await bcrypt.hash(dto.password, salt);
 
     const defaultRole = await this.prisma.role.findUnique({
-      where: { name: 'user' },
+      where: { name: 'USER' },
     });
 
     const user = await this.prisma.user.create({
@@ -33,8 +33,8 @@ export class AuthService {
         email: dto.email,
         password: hashedPassword,
         roles: {
-          connect: { id: defaultRole?.id } 
-        }
+          connect: [{ id: defaultRole?.id }], 
+        },
       },
     });
 

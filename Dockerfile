@@ -1,4 +1,3 @@
-# ========== Этап 1: Сборка (Builder) ==========
 FROM node:22-alpine AS builder
 WORKDIR /app
 
@@ -9,6 +8,9 @@ COPY prisma.config.ts ./
 RUN npm install
 
 COPY . .
+
+ARG DATABASE_URL
+ENV DATABASE_URL=$DATABASE_URL
 
 RUN npx prisma generate && npm run build
 

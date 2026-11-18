@@ -32,8 +32,7 @@ jobs:
       run: npm run build
 
     - name: Build Docker image
-      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPO }}:latest .
-
+      run: docker build --build-arg DATABASE_URL="postgresql://postgres:postgres@localhost:5432/auth_db?schema=public" -t ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPO }}:latest .
     - name: Log in to Docker Hub
       uses: docker/login-action@v3
       with:
